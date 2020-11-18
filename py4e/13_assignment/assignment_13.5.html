@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+<!-- saved from url=(0082)https://www.py4e.com/tools/python-data/?PHPSESSID=cb2dac1624e1d06d8e616f2b2de306c1 -->
+<html lang="en" style="height: 100%;"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8"><style>body {transition: opacity ease-in 0.2s; } 
+body[unresolved] {opacity: 0; display: block; overflow: hidden; position: relative; } 
+</style>
+        
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>PY4E - Python for Everybody</title>
+        <script>
+        var _TSUGI = {
+            context_title: "Using Python to Access Web Data",
+            link_title: "Using the GeoJSON API",
+            user_displayname: "Shaswath Ts",
+            ajax_session: "PHPSESSID=cb2dac1624e1d06d8e616f2b2de306c1",
+            heartbeat: 1500000,
+            heartbeat_url: "https://www.py4e.com/tsugi/util/heartbeat?msec=1500000&PHPSESSID=cb2dac1624e1d06d8e616f2b2de306c1",
+            rest_path: {"parent":"\/tools\/python-data","base_url":"https:\/\/www.py4e.com","controller":"","extra":"","action":false,"parameters":[],"current":"\/tools\/python-data","full":"\/tools\/python-data"},
+            spinnerUrl: "https://static.tsugi.org/img/spinner.gif",
+            staticroot: "https://static.tsugi.org",
+            websocket_url: false,
+            websocket_token: false,
+            window_close_message: "Application complete",
+            session_expire_message: "Your session has expired"
+        }
+        </script>
+        <!-- Tiny bit of JS -->
+        <script src="./assignment_13.5_files/tsugiscripts_head.js.download"></script>
+        <!-- Le styles -->
+        <link href="./assignment_13.5_files/bootstrap.min.css" rel="stylesheet">
+        <link href="./assignment_13.5_files/jquery-ui.min.css" rel="stylesheet">
+                <link href="./assignment_13.5_files/all.css" rel="stylesheet">
+        <link href="./assignment_13.5_files/v4-shims.css" rel="stylesheet">
+        <style>:root {--primary:#0D47A1;--primary-border:#0d4295;--primary-darker:#0c4091;--primary-darkest:#0b3b85;--secondary:#EEEEEE;--text:#111111;--text-light:#5E5E5E;--font-family:sans-serif;--font-size:14px;}</style>
+          <link href="./assignment_13.5_files/tsugi.css" rel="stylesheet">
+
+          <style>
+                        </style>
+<style>
+a[target="_blank"]:after {
+    font-family: 'Font Awesome 5 Free';
+    font-weight: 600;
+    content: " \f35d";
+}
+.goog-te-banner-frame.skiptranslate {
+    display: none !important;
+    }
+body {
+    top: 0px !important;
+    }
+</style>
+
+        <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+        <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+        <!--[if lt IE 9]>
+          <script src="http://localhost/tsugi/vendor/tsugi/lib/static/js/html5shiv/html5shiv.js"></script>
+          <script src="http://localhost/tsugi/vendor/tsugi/lib/static/js/respond/respond.min.js"></script>
+        <![endif]-->
+
+    <script type="text/javascript">CSRF_TOKEN = "5efd521a692a2";</script>
+<link type="text/css" rel="stylesheet" charset="UTF-8" href="./assignment_13.5_files/translateelement.css"><script type="text/javascript" charset="UTF-8" src="./assignment_13.5_files/main.js.download"></script><script type="text/javascript" charset="UTF-8" src="./assignment_13.5_files/element_main.js.download"></script></head>
+<body prefix="oer: http://oerschema.org" style="padding-top: 5.93rem; position: relative; min-height: 100%; top: 0px;" data-gr-c-s-loaded="true">
+<div id="body_container" class="container">
+<script>
+if (window!=window.top) {
+    document.getElementById("body_container").className = "container-fluid";
+} else {
+    document.getElementById("body_container").className = "container";
+}
+</script>
+<nav class="navbar navbar-inverse navbar-fixed-top" role="navigation" id="tsugi_main_nav_bar" style="display: block;">  <div class="container-fluid">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a class="navbar-brand" href="javascript:window_close();">Done</a>
+    </div>
+    <div class="navbar-collapse collapse">
+    </div> <!--/.nav-collapse -->
+  </div> <!--container -->
+</nav>
+<script>
+if ( ! inIframe() ) {
+  document.getElementById('tsugi_main_nav_bar').style.display = 'block';
+  document.getElementsByTagName('body')[0].style.paddingTop = '5.93rem';
+}
+</script>
+<!-- Modal -->
+<div id="settings" class="modal fade" role="dialog" style="display: none;">
+  <div class="modal-dialog">
+
+    <!-- Modal content-->
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal"><span class="fa fa-close" aria-hidden="true"></span><span class="sr-only">Close</span></button>
+        <h4 class="modal-title">Using the GeoJSON API Settings</h4>
+      </div>
+      <div class="modal-body">
+                  <img id="settings_spinner" src="./assignment_13.5_files/spinner.gif" style="display: none">
+            <span id="save_fail" class="text-danger" style="display:none;">Unable to save settings</span>
+            <p>Exercise is set to Retrieve GEO data from a JSON API</p><p>There is currently no due date/time for this assignment.</p>
+              </div>
+    </div>
+
+  </div>
+</div>
+<p>Welcome Shaswath Ts from Using Python to Access Web Data</p>
+<div id="flashmessages"></div><p class="alert alert-info">Your current grade on this assignment is: 100%</p>
+<p>
+<b>Calling a JSON API</b>
+</p>
+In this assignment you will write a Python program somewhat similar to
+<a href="https://www.py4e.com/code3/geojson.py" target="_blank">http://www.py4e.com/code3/geojson.py</a>.
+The program will prompt for a location, contact a web service and retrieve
+JSON for the web service and parse that data, and retrieve the first
+<b>place_id</b> from the JSON.
+A place ID is a textual identifier that uniquely identifies a place as
+within Google Maps.
+<p></p>
+<p>
+<b>API End Points</b>
+</p>
+<p>
+To complete this assignment, you should use this API endpoint that has a static subset
+of the Google Data:
+</p><pre><a href="http://py4e-data.dr-chuck.net/json?" target="_blank">http://py4e-data.dr-chuck.net/json?</a>
+</pre>
+This API uses the same parameter (address) as the Google API.
+This API also has no rate limit so you can test as often as you like.
+If you visit the URL with no parameters, you get "No address..." response.
+<p></p>
+<p>
+To call the API, you need to include a <b>key=</b> parameter and provide the
+address that you are requesting as the <b>address=</b> parameter that is
+properly URL encoded using the <b>urllib.parse.urlencode()</b> function as shown in
+<a href="https://www.py4e.com/code3/geojson.py" target="_blank">http://www.py4e.com/code3/geojson.py</a>
+</p>
+<p>
+Make sure to check that your code is using the API endpoint is as shown above.
+You will get <em>different</em> results from the <b>geojson</b> and <b>json</b>
+endpoints so make sure you are using the same end point as this autograder is using.
+</p><p>
+</p><p><b>Test Data / Sample Execution</b></p>
+<p>
+You can test to see if your program is working with a
+location of "South Federal University" which will have a
+<b>place_id</b> of "ChIJy0Uc1Zmym4gR3fmAYmWNuac".
+</p><pre>$ python3 solution.py
+Enter location: South Federal University
+Retrieving http://...
+Retrieved 2443 characters
+Place id ChIJy0Uc1Zmym4gR3fmAYmWNuac</pre>
+<p></p>
+<p><b>Turn In</b></p>
+<p>
+Please run your program to find the <b>place_id</b> for this location:
+</p><pre>Indiana University at Bloomington</pre>
+Make sure to enter the name and case exactly as above
+and enter the <b>place_id</b> and your Python code below.
+Hint: The first seven characters of the <b>place_id</b>
+are "ChIJM62 ..."<br>
+<p></p>
+<p>
+Make sure to retreive the data from the URL specified above and <b>not</b> the
+normal Google API.  Your program should work with the Google API - but the
+<b>place_id</b> may not match for this assignment.
+</p>
+<form method="post"><input type="hidden" name="PHPSESSID" value="cb2dac1624e1d06d8e616f2b2de306c1">
+place_id: <input type="text" size="40" name="place_id">
+<input type="submit" value="Submit Assignment"><br>
+Python code:<br>
+<textarea rows="20" style="width: 90%" name="code"></textarea><br>
+</form>
+<script src="./assignment_13.5_files/jquery-1.11.3.js.download"></script>
+<script src="./assignment_13.5_files/bootstrap.min.js.download"></script>
+<script src="./assignment_13.5_files/jquery-ui.min.js.download"></script>
+<script src="./assignment_13.5_files/jquery.timeago-1.6.3.js.download"></script>
+<script src="./assignment_13.5_files/handlebars-v4.0.2.js.download"></script>
+<script src="./assignment_13.5_files/tmpl.min.js.download"></script>
+<script src="./assignment_13.5_files/tsugiscripts.js.download"></script>
+<script type="text/javascript">
+    HEARTBEAT_TIMEOUT = setTimeout(doHeartBeat, _TSUGI.heartbeat);
+    tsugiEmbedMenu();
+</script>
+<div id="google_translate_element" style="position: fixed; right: 1em; bottom: 0.25em;"><div class="skiptranslate goog-te-gadget" dir="ltr" style=""><div id=":0.targetLanguage" class="goog-te-gadget-simple" style="white-space: nowrap;"><img src="./assignment_13.5_files/cleardot.gif" class="goog-te-gadget-icon" alt="" style="background-image: url(&quot;https://translate.googleapis.com/translate_static/img/te_ctrl3.gif&quot;); background-position: -65px 0px;"><span style="vertical-align: middle;"><a aria-haspopup="true" class="goog-te-menu-value" href="javascript:void(0)"><span>Select Language</span><img src="./assignment_13.5_files/cleardot.gif" alt="" width="1" height="1"><span style="border-left: 1px solid rgb(187, 187, 187);">​</span><img src="./assignment_13.5_files/cleardot.gif" alt="" width="1" height="1"><span aria-hidden="true" style="color: rgb(118, 118, 118);">▼</span></a></span></div></div></div><script type="text/javascript">
+function googleTranslateElementInit() {
+  new google.translate.TranslateElement({pageLanguage: "en", layout: google.translate.TranslateElement.InlineLayout.SIMPLE
+    }, "google_translate_element");
+}
+</script><script type="text/javascript" src="./assignment_13.5_files/f.txt"></script>
+<script>
+// PHP VERSION 7.0 and 7.1 HACK
+// https://stackoverflow.com/questions/44980654/how-can-i-make-trans-sid-cookie-less-sessions-work-in-php-7-1
+$('a').each(function (x) {
+    var href = $(this).attr('href');
+    if ( ! href ) return;
+    if ( ! href.startsWith('#') ) return;
+    var pos = href.indexOf('/?');
+    if ( pos < 1 ) return;
+    console.dir('Patching broken # href='+href);
+    href = href.substring(0,pos);
+    $(this).attr('href', href);
+});
+console.log('Checking malformed href for php 7.0');
+$('a').each(function (x) {
+    var href = $(this).attr('href');
+    var sess_name = 'PHPSESSID';
+    var sess_id = 'cb2dac1624e1d06d8e616f2b2de306c1';
+    if ( ! href ) return;
+    if ( href.startsWith('#') ) return;
+    if ( href.startsWith('http://') ) return;
+    if ( href.startsWith('javascript:') ) return;
+    if ( href.startsWith('https://') ) return;
+    if ( href.startsWith('//') ) return;
+    if ( href.indexOf(sess_name) > 0 ) return;
+    if ( href.indexOf('?') > 0 ) {
+        href = href + '&';
+    } else {
+        href = href + '?';
+    }
+    href = href + sess_name + '=' + sess_id;
+    console.dir('Patching missing session href='+href);
+    $(this).attr('href', href);
+});
+
+</script>
+
+</div><script src="./assignment_13.5_files/webcomponents-lite.js.download"></script>
+
+<div id="goog-gt-tt" class="skiptranslate" dir="ltr"><div style="padding: 8px;"><div><div class="logo"><img src="./assignment_13.5_files/translate_24dp.png" width="20" height="20" alt="Google Translate"></div></div></div><div class="top" style="padding: 8px; float: left; width: 100%;"><h1 class="title gray">Original text</h1></div><div class="middle" style="padding: 8px;"><div class="original-text"></div></div><div class="bottom" style="padding: 8px;"><div class="activity-links"><span class="activity-link">Contribute a better translation</span><span class="activity-link"></span></div><div class="started-activity-container"><hr style="color: #CCC; background-color: #CCC; height: 1px; border: none;"><div class="activity-root"></div></div></div><div class="status-message" style="display: none;"></div></div><div class="goog-te-spinner-pos"><div class="goog-te-spinner-animation"><svg xmlns="http://www.w3.org/2000/svg" class="goog-te-spinner" width="96px" height="96px" viewBox="0 0 66 66"><circle class="goog-te-spinner-path" fill="none" stroke-width="6" stroke-linecap="round" cx="33" cy="33" r="30"></circle></svg></div></div><iframe frameborder="0" class="goog-te-menu-frame skiptranslate" title="Language Translate Widget" style="visibility: visible; box-sizing: content-box; width: 1054px; height: 263px; display: none;" src="./assignment_13.5_files/saved_resource.html"></iframe></body></html>

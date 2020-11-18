@@ -1,0 +1,6 @@
+print("Hello")
+hr = input("enter hour: ")
+rr = input("enter rate: ")
+pr = float(hr) * float(rr)
+print ("Pay:",float(pr))
+exit()
