@@ -1,0 +1,2 @@
+This is a write example. This data will come on the same line.
+Writing on a new line with a new line character.
